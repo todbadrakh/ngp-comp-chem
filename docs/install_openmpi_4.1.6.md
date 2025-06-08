@@ -90,7 +90,7 @@ The PMIx and UCX libraries are low-level communication libraries that help MPI
 run faster on supercomputing clusters. So, the command to run is:
 
 ```bash
-./configure --prefix=/<path-to-proj-shared>/<username>/opt/openmpi/4.1.6 --with-pmix=/<path-to-pmix> --with-libevent=/<path-to-libevent> --with-ucx=/<path-to-ucx>
+./configure --prefix=/<path-to-opt>/openmpi/4.1.6 --with-pmix=/<path-to-pmix> --with-libevent=/<path-to-libevent> --with-ucx=/<path-to-ucx>
 ```
 
 The configure script will output much information once this command is run.
