@@ -34,6 +34,7 @@ the `/opt` directory, so we will follow that convention.
 wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.gz
 tar xvf openmpi-4.1.6.tar.gz
 ```
+
 This will create a folder called openmpi-4.1.6 which contains the source
 code. 
 
@@ -44,12 +45,12 @@ choosing the options for the installed program - this is called
 'configuration.' We will now configure the OpenMPI 4.1.6 installation with
 the following options:
 
-a. Install the program in the `/<path-to-proj-shared>/<username>/openmpi/4.1.6`
+1. Install the program in the `/<path-to-proj-shared>/<username>/openmpi/4.1.6`
    folder by using the `--prefix` option.
 
-b. Link the program to MPIx library using the `--with-mpix` option.
+2. Link the program to MPIx library using the `--with-mpix` option.
 
-c. Link the program to the UCX library using the `--with-ucx` option.
+3. Link the program to the UCX library using the `--with-ucx` option.
 
 
 
