@@ -4,11 +4,44 @@ OpenMPI is an implementation of the Message Passing Interface (MPI) that allows
 parallel processes. ORCA 6.0.1 requires OpenMPI 4.1.6 and we will now install
 it.
 
+## Setup environment
+
+We will use the AMD Optimized Compiler (AOCC) to install OpenMPI. In order to
+do that, we must load some environment modules, which are files you can load
+that make certain software available to you. All you have to do is run the
+command:
+
+```bash
+module load aocc
+```
+
+Now the C compiler `clang`, C++ compiler `clang++` and Fortran compiler
+`flang` are available to use. You can check by running the commands
+
+```bash
+which clang
+which clang++
+which flang
+```
+
+The output should be the location of the compiler executables. One last
+thing to do is to create environment variables for each compiler so that
+the installer knows for sure which compiler to use:
+
+```bash
+export CC=clang
+export CXX=clang++
+export FC=flang
+```
+
+Now we are ready to compile some programs!
+
 ## Create the necessary directory structure
 
 We will keep things organized by creating a directory for our software
 installations. It is customary for Linux to keep user-installed software in
-the `/opt` directory, so we will follow that convention.
+the `/opt` directory, so we will follow that convention and create our own
+`/opt` directory in our project directory.
 
 1. Navigate to your project directory.
 
@@ -68,17 +101,12 @@ Now we are ready for the 'build' phase of the installation.
 Now we simply 'build' the program using the `make` program, using 8 parallel
 processes via the `-j 8` flag.
 
-1. Build
+1. Build the binaries
     ```bash
     make -j 8
     ```
 
-2. Test the build
-    ```bash
-    make -j 8 check
-    ```
-
-3. Install
+2. Install the binaries
     ```bash
     make -j 8 install
     ```
