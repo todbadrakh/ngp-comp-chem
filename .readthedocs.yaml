@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16455be61a7df80d0d47a936f822e0116b3d5058efd849ef7f25ede07a4cd11e
-size 428
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the OS, Python version, and other tools you might need
+build:
+  os: ubuntu-24.04
+  tools:
+    python: "3.13"
+
+# Build documentation in the "docs/" directory with Sphinx
+sphinx:
+  configuration: docs/conf.py
+
+# Set the requirements
+python:
+  install:
+    - requirements: requirements.txt
