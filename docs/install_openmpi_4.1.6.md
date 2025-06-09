@@ -81,7 +81,7 @@ the following options:
 1. Install the program in the `/<path-to-proj-shared>/<username>/opt/openmpi/4.1.6`
    folder by using the `--prefix` option.
 
-2. Link the program to PMIx library using the `--with-mpix` option and its
+2. Link the program to PMIx library using the `--with-pmix` option and its
    dependency `libevent` using the `--with-libevent` option.
 
 3. Link the program to the UCX library using the `--with-ucx` option.
