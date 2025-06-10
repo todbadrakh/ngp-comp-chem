@@ -59,13 +59,23 @@ the `/opt` directory, so we will follow that convention and create our own
 3. Create a directory where OpenMPI 4.1.6 will be installed.
 
     ```bash
-    mkdir -p opt/openmpi/4.1.6
+    mkdir -p opt/openmpi
     ```
 
 ## Download and unpack the OpenMPI 4.1.6 source code
 
+We will use the `wget` command to download the compressed source code in
+`.tar.gz` ("tarball") format, then uncompress ("unpack") it using the
+`tar` program.
+
+1. Download the source code.
+
 ```bash
 wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.gz
+```
+
+2. Unpack the tarball.
+```bash
 tar xvf openmpi-4.1.6.tar.gz
 ```
 
@@ -88,14 +98,16 @@ the following options:
 3. Link the program to the UCX library using the `--with-ucx` option.
 
 The PMIx and UCX libraries are low-level communication libraries that help MPI
-run faster on supercomputing clusters. So, the command to run is:
+run faster on supercomputing clusters. So, the commands to run is:
 
 ```bash
+cd openmpi-4.1.6
 ./configure --prefix=/<path-to-opt>/openmpi/4.1.6 --with-pmix=/<path-to-pmix> --with-libevent=/<path-to-libevent> --with-ucx=/<path-to-ucx>
 ```
 
 The configure script will output much information once this command is run.
-Now we are ready for the 'build' phase of the installation.
+These are all various print statements recording each action the configuration
+script is taking. Now we are ready for the 'build' phase of the installation.
 
 ## Build the executables
 
