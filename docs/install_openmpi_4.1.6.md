@@ -9,9 +9,10 @@ it.
 We will use the AMD Optimized Compiler (AOCC) to install OpenMPI. In order to
 do that, we must load some environment modules, which are files you can load
 that make certain software available to you. All you have to do is run the
-command:
+commands:
 
 ```bash
+source <nsp>
 module load aocc
 ```
 
